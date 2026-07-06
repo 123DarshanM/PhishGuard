@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Email Simulator</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+
+.email-card{
+
+background:#161b22;
+
+border:1px solid #30363d;
+
+border-radius:15px;
+
+padding:25px;
+
+margin-bottom:25px;
+
+transition:.3s;
+
+}
+
+.email-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 0 20px rgba(0,229,255,.25);
+
+}
+
+.email-preview{
+
+background:#0d1117;
+
+padding:15px;
+
+border-radius:10px;
+
+white-space:pre-wrap;
+
+max-height:250px;
+
+overflow:auto;
+
+margin-top:15px;
+
+font-size:14px;
+
+}
+
+.badge-phishing{
+
+background:#dc3545;
+
+}
+
+.badge-safe{
+
+background:#198754;
+
+}
+
+.section-title{
+
+color:#00e5ff;
+
+margin-bottom:25px;
+
+}
+
+.info-box{
+
+background:#161b22;
+
+padding:20px;
+
+border-left:5px solid #00e5ff;
+
+border-radius:10px;
+
+margin-bottom:35px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>🛡️ PhishGuard</h2>
+
+<ul>
+
+<li><a href="/dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+
+<li><a href="/detector"><i class="fa-solid fa-envelope"></i> Email Detector</a></li>
+
+<li><a href="/url"><i class="fa-solid fa-link"></i> URL Analyzer</a></li>
+
+<li><a href="/simulator"><i class="fa-solid fa-user-secret"></i> Simulator</a></li>
+
+<li><a href="/awareness"><i class="fa-solid fa-shield-halved"></i> Awareness</a></li>
+
+<li><a href="/report"><i class="fa-solid fa-file-pdf"></i> Reports</a></li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<h1>
+
+📧 Educational Email Simulator
+
+</h1>
+
+<p>
+
+Review realistic email examples to learn how phishing emails differ from legitimate messages. These samples are for security awareness and training only.
+
+</p>
+
+<div class="info-box">
+
+<h5>
+
+<i class="fa-solid fa-circle-info"></i>
+
+How to Use
+
+</h5>
+
+<ul>
+
+<li>Select any sample below.</li>
+
+<li>Read the email carefully.</li>
+
+<li>Identify suspicious indicators.</li>
+
+<li>Copy the content into the Email Detector to analyze it.</li>
+
+</ul>
+
+</div>
+
+<h2 class="section-title">
+
+Sample Emails
+
+</h2>
+
+{% for title, content in emails.items() %}
+
+<div class="email-card">
+
+<div class="d-flex justify-content-between align-items-center">
+
+<h4>
+
+{{ title }}
+
+</h4>
+
+{% if "Safe" in title or "University" in title %}
+
+<span class="badge badge-safe">
+
+Legitimate Example
+
+</span>
+
+{% else %}
+
+<span class="badge badge-phishing">
+
+Phishing Example
+
+</span>
+
+{% endif %}
+
+</div>
+
+<div class="email-preview">
+
+{{ content }}
+
+</div>
+
+<div class="mt-3">
+
+<button
+
+class="btn btn-primary"
+
+onclick="copyEmail(`{{ content|replace('`','') }}`)">
+
+<i class="fa-solid fa-copy"></i>
+
+Copy Email
+
+</button>
+
+<a href="/detector" class="btn btn-success ms-2">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+Open Email Detector
+
+</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+<hr class="mt-5">
+
+<h2 class="section-title">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Learning Objectives
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="card bg-dark text-white border-danger p-3 h-100">
+
+<h5>
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+Identify Red Flags
+
+</h5>
+
+<p>
+
+Look for urgent language, fake domains, suspicious links, spelling mistakes, and requests for sensitive information.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card bg-dark text-white border-warning p-3 h-100">
+
+<h5>
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Think Before You Click
+
+</h5>
+
+<p>
+
+Always verify links before opening them and never trust unexpected requests for passwords or financial information.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card bg-dark text-white border-success p-3 h-100">
+
+<h5>
+
+<i class="fa-solid fa-user-shield"></i>
+
+Stay Protected
+
+</h5>
+
+<p>
+
+Enable multi-factor authentication, keep software updated, and report suspicious emails to your organization's security team.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center mt-5">
+
+<a href="/dashboard" class="btn btn-primary btn-lg">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back to Dashboard
+
+</a>
+
+</div>
+
+<footer class="mt-5 text-center">
+
+<hr>
+
+<h5>
+
+🛡️ PhishGuard Enterprise
+
+</h5>
+
+<p>
+
+Educational Phishing Awareness & Detection Platform
+
+</p>
+
+<p>
+
+Developed by <strong>Darshan Manjunath Mutagond</strong>
+
+</p>
+
+<p>
+
+Sample emails are fictional and intended only for cybersecurity education.
+
+</p>
+
+<p>
+
+© 2026 All Rights Reserved
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script>
+
+function copyEmail(content){
+
+navigator.clipboard.writeText(content);
+
+alert("Sample email copied to clipboard!\\n\\nNow open the Email Detector and paste it for analysis.");
+
+}
+
+</script>
+
+</body>
+
+</html>

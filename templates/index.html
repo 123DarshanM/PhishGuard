@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PhishGuard Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>🛡️ PhishGuard</h2>
+
+        <ul>
+
+            <li>
+                <a href="/">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/detector">
+                    <i class="fa-solid fa-envelope"></i>
+                    Email Detector
+                </a>
+            </li>
+
+            <li>
+                <a href="/url">
+                    <i class="fa-solid fa-link"></i>
+                    URL Analyzer
+                </a>
+            </li>
+
+            <li>
+                <a href="/simulator">
+                    <i class="fa-solid fa-user-secret"></i>
+                    Simulator
+                </a>
+            </li>
+
+            <li>
+                <a href="/awareness">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Awareness
+                </a>
+            </li>
+
+            <li>
+                <a href="/report">
+                    <i class="fa-solid fa-file-lines"></i>
+                    Reports
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>Cybersecurity Dashboard</h1>
+
+            <span>
+                Welcome, Darshan
+            </span>
+
+        </div>
+
+        <!-- Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <h2>120</h2>
+
+                <p>Emails Analyzed</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <h2>98</h2>
+
+                <p>Safe Emails</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <h2>18</h2>
+
+                <p>Suspicious</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-bug"></i>
+
+                <h2>4</h2>
+
+                <p>Critical Alerts</p>
+
+            </div>
+
+        </div>
+
+        <!-- Modules -->
+
+        <h2 class="section-title">
+
+            Security Modules
+
+        </h2>
+
+        <div class="modules">
+
+            <a href="/detector" class="module">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <h3>Email Detector</h3>
+
+                <p>Analyze suspicious emails.</p>
+
+            </a>
+
+            <a href="/url" class="module">
+
+                <i class="fa-solid fa-link"></i>
+
+                <h3>URL Analyzer</h3>
+
+                <p>Detect malicious URLs.</p>
+
+            </a>
+
+            <a href="/simulator" class="module">
+
+                <i class="fa-solid fa-user-secret"></i>
+
+                <h3>Simulator</h3>
+
+                <p>Phishing awareness simulation.</p>
+
+            </a>
+
+            <a href="/awareness" class="module">
+
+                <i class="fa-solid fa-shield"></i>
+
+                <h3>Awareness</h3>
+
+                <p>Learn phishing indicators.</p>
+
+            </a>
+
+            <a href="/report" class="module">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <h3>Reports</h3>
+
+                <p>Generate security reports.</p>
+
+            </a>
+
+            <div class="module">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h3>Threat Score</h3>
+
+                <h1 style="color:#00ff99;">87%</h1>
+
+            </div>
+
+        </div>
+
+        <!-- Activity -->
+
+        <div class="activity">
+
+            <h2>Recent Activity</h2>
+
+            <table>
+
+                <tr>
+
+                    <th>Time</th>
+
+                    <th>Event</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>10:20</td>
+
+                    <td>Email Analysis Completed</td>
+
+                    <td class="safe">Safe</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>10:45</td>
+
+                    <td>Suspicious URL Detected</td>
+
+                    <td class="danger">High Risk</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>11:00</td>
+
+                    <td>Awareness Simulation</td>
+
+                    <td class="warning">Completed</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <footer>
+
+            © 2026 PhishGuard
+
+            <br>
+
+            Developed by Darshan Manjunath Mutagond
+
+        </footer>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

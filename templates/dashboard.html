@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PhishGuard Enterprise Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+<h2>
+
+🛡️ PhishGuard
+
+</h2>
+
+<ul>
+
+<li>
+
+<a href="/dashboard">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/detector">
+
+<i class="fa-solid fa-envelope"></i>
+
+Email Detector
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/url">
+
+<i class="fa-solid fa-link"></i>
+
+URL Analyzer
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/simulator">
+
+<i class="fa-solid fa-user-secret"></i>
+
+Simulator
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/awareness">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Awareness
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/report">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Reports
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- ================= MAIN ================= -->
+
+<div class="main">
+
+<div class="topbar">
+
+<div>
+
+<h1>
+
+Security Operations Center
+
+</h1>
+
+<p>
+
+Real-Time Phishing Detection Dashboard
+
+</p>
+
+</div>
+
+<div>
+
+<span class="badge bg-success fs-6">
+
+🟢 System Online
+
+</span>
+
+</div>
+
+</div>
+
+<!-- ================= CARDS ================= -->
+
+<div class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-envelope"></i>
+
+<h2>125</h2>
+
+<p>Total Emails</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h2>104</h2>
+
+<p>Safe Emails</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-triangle-exclamation"></i>
+
+<h2>17</h2>
+
+<p>Suspicious</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-skull-crossbones"></i>
+
+<h2>4</h2>
+
+<p>Critical</p>
+
+</div>
+
+</div>
+
+<!-- ================= MODULES ================= -->
+
+<h2 class="section-title">
+
+Security Modules
+
+</h2>
+
+<div class="modules">
+
+<a href="/detector" class="module">
+
+<i class="fa-solid fa-envelope"></i>
+
+<h3>Email Detector</h3>
+
+<p>
+
+Analyze phishing emails using rule-based detection.
+
+</p>
+
+</a>
+
+<a href="/url" class="module">
+
+<i class="fa-solid fa-link"></i>
+
+<h3>URL Analyzer</h3>
+
+<p>
+
+Identify suspicious URLs and domains.
+
+</p>
+
+</a>
+
+<a href="/simulator" class="module">
+
+<i class="fa-solid fa-user-secret"></i>
+
+<h3>Simulation Lab</h3>
+
+<p>
+
+Security awareness demonstration.
+
+</p>
+
+</a>
+
+<a href="/awareness" class="module">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Awareness Center</h3>
+
+<p>
+
+Learn to identify phishing attacks.
+
+</p>
+
+</a>
+
+<a href="/report" class="module">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+<h3>Reports</h3>
+
+<p>
+
+Generate downloadable security reports.
+
+</p>
+
+</a>
+
+<div class="module">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Threat Level</h3>
+
+<h1 style="color:#00ff99;">
+
+87%
+
+</h1>
+
+<div class="progress mt-3">
+
+<div
+
+class="progress-bar bg-danger"
+
+style="width:87%">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= RECENT ACTIVITY ================= -->
+
+<div class="activity">
+
+<h2>
+
+Recent Security Activity
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Time</th>
+
+<th>Module</th>
+
+<th>Event</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>10:15</td>
+
+<td>Email Detector</td>
+
+<td>Suspicious Email Detected</td>
+
+<td class="danger">
+
+Blocked
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>10:41</td>
+
+<td>URL Analyzer</td>
+
+<td>Malicious URL Identified</td>
+
+<td class="warning">
+
+Investigating
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>11:08</td>
+
+<td>Simulator</td>
+
+<td>Awareness Exercise Completed</td>
+
+<td class="safe">
+
+Completed
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>11:32</td>
+
+<td>Email Detector</td>
+
+<td>Safe Email Verified</td>
+
+<td class="safe">
+
+Safe
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- ================= ANALYTICS ================= -->
+
+<h2 class="section-title mt-5">
+
+Threat Analytics
+
+</h2>
+
+<div class="modules">
+
+<div class="module">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+<h3>Email Threats</h3>
+
+<p>Phishing Attempts</p>
+
+<h2 style="color:#ff5252;">14%</h2>
+
+</div>
+
+<div class="module">
+
+<i class="fa-solid fa-globe"></i>
+
+<h3>Malicious URLs</h3>
+
+<p>Detected Today</p>
+
+<h2 style="color:#ffc107;">23</h2>
+
+</div>
+
+<div class="module">
+
+<i class="fa-solid fa-shield-virus"></i>
+
+<h3>Protection Rate</h3>
+
+<p>Detection Accuracy</p>
+
+<h2 style="color:#00ff99;">98%</h2>
+
+</div>
+<div class="module">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<h3>Security Score</h3>
+
+<p>Overall System Health</p>
+
+<h2 style="color:#58a6ff;">94%</h2>
+
+</div>
+
+</div>
+
+<!-- ================= ALERT PANEL ================= -->
+
+<div class="activity mt-5">
+
+<h2>
+
+<i class="fa-solid fa-bell"></i>
+
+Latest Security Alerts
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Alert ID</th>
+
+<th>Severity</th>
+
+<th>Description</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>#AL-1001</td>
+
+<td class="danger">Critical</td>
+
+<td>Credential harvesting page detected.</td>
+
+<td>Blocked</td>
+
+</tr>
+
+<tr>
+
+<td>#AL-1002</td>
+
+<td class="warning">Medium</td>
+
+<td>Suspicious URL submitted for analysis.</td>
+
+<td>Pending</td>
+
+</tr>
+
+<tr>
+
+<td>#AL-1003</td>
+
+<td class="safe">Low</td>
+
+<td>Email classified as legitimate.</td>
+
+<td>Closed</td>
+
+</tr>
+
+<tr>
+
+<td>#AL-1004</td>
+
+<td class="danger">Critical</td>
+
+<td>Domain impersonation attempt detected.</td>
+
+<td>Blocked</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- ================= QUICK STATS ================= -->
+
+<div class="cards mt-5">
+
+<div class="card">
+
+<i class="fa-solid fa-clock"></i>
+
+<h2>24/7</h2>
+
+<p>Monitoring</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-eye"></i>
+
+<h2>542</h2>
+
+<p>URLs Scanned</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-shield"></i>
+
+<h2>99.2%</h2>
+
+<p>Detection Accuracy</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-download"></i>
+
+<h2>18</h2>
+
+<p>Reports Generated</p>
+
+</div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<hr>
+
+<h5>
+
+🛡️ PhishGuard Enterprise v1.0
+
+</h5>
+
+<p>
+
+Educational Phishing Awareness & Detection Platform
+
+</p>
+
+<p>
+
+Developed by <strong>Darshan Manjunath Mutagond</strong>
+
+</p>
+
+<p>
+
+Python • Flask • HTML • CSS • Bootstrap • SQLite
+
+</p>
+
+<p>
+
+© 2026 All Rights Reserved
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

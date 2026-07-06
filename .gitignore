@@ -1,5 +1,7 @@
 venv/
 __pycache__/
 *.pyc
-database.db
+phishguard.db
 .env
+.idea/
+.vscode/
