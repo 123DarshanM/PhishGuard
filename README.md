@@ -52,7 +52,7 @@ git clone https://github.com/123DarshanM/PhishGuard.git
 
 cd PhishGuard
 
-pip install -r requirements.txt
+pip install --break-system-packages -r requirements.txt
 
 python app.py
 
