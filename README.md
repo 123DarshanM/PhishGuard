@@ -101,4 +101,4 @@ This project was developed for educational purposes to understand phishing detec
 
 ## 👨‍💻 Developer
 
-**Darshan Manjunath Mutagond**
+**Darshan M**
